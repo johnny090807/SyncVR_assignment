@@ -1,0 +1,15 @@
+.fun-colorbackground{
+    background-image: linear-gradient(to bottom right, red, orange, yellow, green, #00fff8, blue, purple, #e700ff, red);
+}
+
+
+@keyframes changetofun {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+.fun-colorbackgroundhover:hover{
+    -webkit-animation-fill-mode: forwards;
+    animation: changetofun 1s infinite;
+    background-image: linear-gradient(to bottom right, red, orange, yellow, green, #00fff8, blue, purple, #e700ff, red);
+}

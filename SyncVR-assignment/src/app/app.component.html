@@ -1,16 +1,25 @@
 <nav class="navbar sticky-top navbar-warning bg-warning">
+  
   <a class="navbar-brand m-3" href="#">
-    <img src="../assets/headset.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="../assets/headset.png" width="50" height="50" class="d-inline-block align-top" alt="">
     SyncVRAssignment
-    <a class="btn btn-outline-info" [routerLink]="['/fibonacci']" routerLinkActive="active"  type="submit">Fibonacci-counter</a>
   </a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
   <form class="form-inline m-3" *ngIf="this.authService.userState == null">
-    <button class="btn btn-outline-success m-3" [routerLink]="['/login']" routerLinkActive="active"  type="submit">Log in</button>
-    <button class="btn btn-outline-primary" [routerLink]="['/register']" routerLinkActive="active" type="submit">Register</button>
+  <a class="btn m-3 fun-colorbackgroundhover" [routerLink]="['/fibofun']" routerLinkActive="fun-colorbackground" style="color: white; border: 5px solid; border-image-slice: 1; border-width: 2px; border-image-source: linear-gradient(to bottom right, red, orange, yellow, green, #00fff8, blue, purple, #e700ff, red);" type="submit">Fibonacci-counter</a>
+  <a class="btn btn-outline-info m-3" [routerLink]="['/fibonacci']" routerLinkActive="active" type="submit">Fibonacci-counter</a>
+  <button class="btn btn-outline-success m-3" [routerLink]="['/login']" routerLinkActive="active"  type="submit">Log in</button>
+    <button class="btn btn-outline-primary m-3" [routerLink]="['/register']" routerLinkActive="active" type="submit">Register</button>
   </form>
   <form class="form-inline m-3" *ngIf="this.authService.userState != null">
-    <p class="">{{this.authService.userState.email}}</p>
+    <a class="btn m-3 fun-colorbackgroundhover" [routerLink]="['/fibofun']" routerLinkActive="fun-colorbackground" style="color: white; border: 5px solid; border-image-slice: 1; border-width: 2px; border-image-source: linear-gradient(to bottom right, red, orange, yellow, green, #00fff8, blue, purple, #e700ff, red);" type="submit">Fibonacci-counter</a>
+    <a class="btn btn-outline-info m-3" [routerLink]="['/fibonacci']" routerLinkActive="active" type="submit">Fibonacci-counter</a>
+    <p class="btn">{{this.authService.userState.email}}</p>
     <button class="btn btn-outline-danger" (click)="logout()">Log out</button>
-  </form>
+    </form>
 </nav>
 <router-outlet></router-outlet>

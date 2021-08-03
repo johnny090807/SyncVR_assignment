@@ -14,7 +14,7 @@
             <div class="spinner-border text-center" role="status" *ngIf="!ready">
                 <span class="sr-only">Loading...</span>
             </div>
-              <div data-spy="scroll" data-offset="0" *ngIf="ready">
+              <div data-spy="scroll" class="overflow-auto" data-offset="0" *ngIf="ready">
                 <div *ngFor="let fibonacci of allFibonacciEntries">
                     <h4>This user: {{fibonacci.email}}</h4>
                     <p>They've entered this number: {{fibonacci.number}}</p>

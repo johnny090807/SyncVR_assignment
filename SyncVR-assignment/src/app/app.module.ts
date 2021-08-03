@@ -14,6 +14,7 @@ import { AuthService } from './auth/auth.service';
 import { FibbonaciComponent } from './fibonacci/fibonacci.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { FibonacciService } from './fibonacci/fibonacci.service';
+import { FibonacciShowerComponent } from './fibonacci-shower/fibonacci-shower.component';
 
 const appConfig = {
   apiKey: "AIzaSyCVT0cjIqGOiOMnanq8lsEHuVociEYKzQg",
@@ -31,7 +32,8 @@ const appConfig = {
     AppComponent,
     LoginComponent,
     FibbonaciComponent,
-    RegisterComponent
+    RegisterComponent,
+    FibonacciShowerComponent
   ],
   imports: [
     BrowserModule,
