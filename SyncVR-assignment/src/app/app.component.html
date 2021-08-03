@@ -1,0 +1,16 @@
+<nav class="navbar sticky-top navbar-warning bg-warning">
+  <a class="navbar-brand m-3" href="#">
+    <img src="../assets/headset.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    SyncVRAssignment
+    <a class="btn btn-outline-info" [routerLink]="['/fibonacci']" routerLinkActive="active"  type="submit">Fibonacci-counter</a>
+  </a>
+  <form class="form-inline m-3" *ngIf="this.authService.userState == null">
+    <button class="btn btn-outline-success m-3" [routerLink]="['/login']" routerLinkActive="active"  type="submit">Log in</button>
+    <button class="btn btn-outline-primary" [routerLink]="['/register']" routerLinkActive="active" type="submit">Register</button>
+  </form>
+  <form class="form-inline m-3" *ngIf="this.authService.userState != null">
+    <p class="">{{this.authService.userState.email}}</p>
+    <button class="btn btn-outline-danger" (click)="logout()">Log out</button>
+  </form>
+</nav>
+<router-outlet></router-outlet>

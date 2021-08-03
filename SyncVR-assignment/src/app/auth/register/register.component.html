@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col">
+        <body class="text-center">
+            <form class="form-group" [formGroup]="loginForm" >
+            <img class="mb-4" src="../../assets/login.png" alt="" width="200" height="164">
+            <h1 class="h3 mb-3 font-weight-normal">Create your account</h1>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control mb-3" formControlName="email" placeholder="Email address" [ngClass]="{'border-danger': loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched && loginForm.controls.email.errors.required)}" required="" autofocus="" >
+            <div *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched && loginForm.controls.email.errors.required)" class="text-danger mb-3">Please enter a valid email e.g. test@test.nl </div>
+            <label for="inputPassword" class="sr-only " >Password</label>
+            <input type="password" id="inputPassword" formControlName="password" class="form-control mb-3" [ngClass]="{'border-danger': loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched && loginForm.controls.password.errors.required)}"  placeholder="Password" required="">
+            <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched && loginForm.controls.password.errors.required)" class="text-danger mb-3">Please enter a valid password.</div>
+            <button class="btn btn-primary btn-block" (click)="Login()" type="submit" [disabled]="!loginForm.valid">Sign up</button> or
+            <button (click)="LoginViaGoogle()" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign up with <b>Google</b></button>
+            <p class="mt-5 mb-3 text-muted">© John Klees</p>
+            </form>
+        </body>
+      </div>
+      <div class="col">
+      </div>
+  </div>
+  

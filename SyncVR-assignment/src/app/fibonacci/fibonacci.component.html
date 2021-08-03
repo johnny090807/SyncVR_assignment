@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-5">
+            <form [formGroup]="fibonacciFormGroup">
+                <p class="h3 mb-3">Which Fibonacci number do you want from the sequence?</p>
+                <input type="number" class="form-control mb-3" name="" id="" formControlName="numberinput">
+                <button (click)="fibonacci()" [disabled]="!fibonacciFormGroup.valid" type="submit" class="btn btn-success mb-3">Submit</button>
+            </form>
+
+            <p class="h5" *ngIf="fibonacciNumber != null">Result: {{fibonacciNumber}}</p>   
+        </div>
+        <div class="col-5">
+            <div class="spinner-border text-center" role="status" *ngIf="!ready">
+                <span class="sr-only">Loading...</span>
+            </div>
+              <div data-spy="scroll" data-offset="0" *ngIf="ready">
+                <div *ngFor="let fibonacci of allFibonacciEntries">
+                    <h4>This user: {{fibonacci.email}}</h4>
+                    <p>They've entered this number: {{fibonacci.number}}</p>
+                    <p>They've got this result: {{fibonacci.result}}</p>
+                    <p class="text-muted">posted at: {{ fibonacci.date.seconds * 1000 | date:'medium'}}</p>
+                </div>
+              </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
